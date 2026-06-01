@@ -8,12 +8,12 @@ Here is a breakdown of its core architectural features.
 
 ## 1. The Context Engine: Mining & Memory Banking
 
-Conversations with LLMs naturally degrade into noise as threads lengthen. AntiCurser solves "context fatigue" by treating historical development threads as a mineable database rather than a static text log.
+Conversations with LLMs naturally degrade into noise as threads lengthen. Atomic Threadder solves "context fatigue" by treating historical development threads as a mineable database rather than a static text log.
 
 * **Continuous Archiving:** Every sprint and architectural discussion is persistently archived, creating an immutable history of project decisions.
 * **Curated "Nuggets":** Instead of forcing an engineer to scroll through a 40-turn thread to find a specific solution, the system allows for frictionless, inline extraction of high-value context blocks. These isolated "Nuggets" are titled and stored in a curated database.
 
-## 2. Context Window Optimization: TSMC Cleanroom Prompts & "Token Sipping"
+## 2. Context Window Optimization: Cleanroom Prompt Engineering & "Token Sipping"
 
 Throwing an entire codebase or raw chat history into an LLM context window is inefficient and degrades the model's reasoning capabilities. AntiCurser treats the AI's context window like a TSMC semiconductor cleanroom—a zero-contamination environment where only hyper-curated, ultra-pure data is allowed inside.
 
@@ -30,7 +30,7 @@ Standard text searches are blind to intent. AntiCurser features high-precision A
 
 ## 4. Deterministic Code Operations
 
-Pasting AI-generated code directly into a complex application is inherently dangerous. AntiCurser secures this process by utilizing a proprietary Atomic Skeletal Hash Architecture (ASHA).
+Pasting AI-generated code directly into a complex application is inherently dangerous. Atomic Threadder secures this process by utilizing a proprietary Atomic Skeletal Hash Architecture (ASHA).
 
 * **Atomized Registry:** The entire codebase is broken down and stored in a relational database with deterministic cryptographic hashes tracking the state of every module.
 * **Automated Merging:** Because the system maintains a strict topological registry of the project, merging AI-generated code transitions from a manual, copy-paste chore into a highly automated, verifiable pipeline with rollback guarantees.
