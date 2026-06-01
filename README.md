@@ -2,7 +2,7 @@
 
 Atomic Threadder is a dedicated, local-first development environment engineered to solve the friction points of modern AI-assisted programming. It operates on the principle that AI should conform to the engineer's workspace, not the other way around.
 
-By combining deterministic code operations with deep structural introspection, AntiCurser eliminates LLM hallucinations, context fatigue, and the risks of blind code merging—all while maintaining absolute efficiency over the AI's cognitive load.
+By combining deterministic code operations with deep structural introspection, Atomic Threadder eliminates LLM hallucinations, context fatigue, and the risks of blind code merging—all while maintaining absolute efficiency over the AI's cognitive load.
 
 Here is a breakdown of its core architectural features.
 
@@ -17,12 +17,12 @@ Conversations with LLMs naturally degrade into noise as threads lengthen. Atomic
 
 Throwing an entire codebase or raw chat history into an LLM context window is inefficient and degrades the model's reasoning capabilities. AntiCurser treats the AI's context window like a TSMC semiconductor cleanroom—a zero-contamination environment where only hyper-curated, ultra-pure data is allowed inside.
 
-* **TSMC Cleanroom Filtering:** Before a prompt is compiled, it is scrubbed of all conversational filler, deprecated code, and irrelevant modules. The AI receives a pristine, noise-free blueprint.
+* **Prompt Cleanroom Filtering:** Before a prompt is compiled, it is scrubbed of all conversational filler, deprecated code, and irrelevant modules. The AI receives a pristine, noise-free blueprint.
 * **"Token Sipping":** By extracting exact structural nodes and injecting only curated historical Nuggets, the environment "sips" tokens instead of chugging them. This maximizes the LLM's signal-to-noise ratio, ensuring the AI operates at peak cognitive efficiency without context dilution or bloated API costs.
 
 ## 3. Deep Structural Introspection
 
-Standard text searches are blind to intent. AntiCurser features high-precision Abstract Syntax Tree (AST) analyzers that read the codebase exactly how a compiler does, categorizing every variable, function, and token by its actual structural purpose.
+Standard text searches are blind to intent. Atomic Threadder features high-precision Abstract Syntax Tree (AST) analyzers that read the codebase exactly how a compiler does, categorizing every variable, function, and token by its actual structural purpose.
 
 * **Surgical Bug Hunting:** The introspection engine generates highly detailed matrix reports that map out exact line coordinates and token types. When tracking down where a payload mutates, the engineer gets a categorized map, stripping the guesswork out of debugging.
 * **Laser-Focused Injections:** Before an AI generates code, the introspection tools map the workspace topology and extract a read-only blueprint of the exact modules involved. Feeding this structural reality into the cleanroom prompt acts as an anti-hallucination mechanism.
