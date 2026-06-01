@@ -37,7 +37,7 @@ Pasting AI-generated code directly into a complex application is inherently dang
 
 ## 5. Adversarial Refinement
 
-To break the "sycophancy trap"—where a single AI model simply agrees its own code is flawless—AntiCurser is designed to facilitate adversarial evaluation loops.
+To break the "sycophancy trap"—where a single AI model simply agrees its own code is flawless—Atomic Threadder is designed to facilitate adversarial evaluation loops.
 
 * **Model vs. Model Critiques:** The environment supports pitting different foundational models against one another. One model generates the initial logic, a secondary model is tasked strictly with critiquing and identifying attack vectors, and the original model refines the output based on the critique.
 * **Elevated Code Quality:** By forcing this iterative, adversarial debate loop, prototype-grade outputs are systematically hammered into highly optimized, error-resistant production code.
