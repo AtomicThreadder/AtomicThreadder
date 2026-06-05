@@ -68,7 +68,7 @@ The engine splits files into arrays of lines and indexes them individually.
 * **Deduplicated Lines:** Every unique line of text is passed into `asha_lines`, keyed uniquely by its personal SHA-256 signature alongside an explicit tracking metric for indentation depth.
 * **Junction Mapping:** An operational junction entity matches these line hashes to absolute indices, carrying supplemental array IDs for multi-token syntax matrices and compiler boundary classifications.
 
-### 4. Structural Block Assembly (`asha_block_builder.ts`, `asha_nomenclature_crawler.ts`)
+### 4. Structural Block Assembly
 
 The system passes code metadata to an internal AST crawler engine.
 
@@ -76,7 +76,7 @@ The system passes code metadata to an internal AST crawler engine.
 * **Content Addressing:** The engine pushes these nodes into `asha_unique_blocks` using a composite array signature (`line_hashes`, `block_type`, and a cryptographic `content_hash`).
 * **Sequence Alignment:** Coordinates are instantly bound within `asha_module_block_instances` via sequence ordering weights, mapping exactly how blocks reconstruct linearly.
 
-### 5. Workspace Drift Evaluation (`asha_drift_analyzer`)
+### 5. Workspace Drift Evaluation 
 
 When a change request or an AI-generated string template hits the environment, ASHA avoids text-comparison tools like `diff`.
 
