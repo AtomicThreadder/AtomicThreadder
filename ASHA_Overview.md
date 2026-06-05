@@ -47,36 +47,36 @@ The architecture executes code mapping through a structured five-stage pipeline 
 
 ```
 
-### 1. The Normalization Gate (`asha_preflight_normalizer.ts`, `asha_normalization_engine.ts`)
+### 1. The Normalization Gate 
 
 To eliminate arbitrary aesthetic differences (such as mixed spacing or varied carriage returns) that cause cryptographic hash mutations, files are forced through a strict preflight layer.
 
 * **Sanitization:** Windows CRLF variants are stripped down to uniform Unix LF line breaks, and trailing whitespace is culled.
-* **Deterministic Formatting:** The engine spawns a native Deno Rust subprocess (`deno fmt`) directly against target paths on disk, ensuring absolute syntax styling layout before any hashes are read.
+* **Deterministic Formatting:** The engine spawns a native Deno Rust subprocess directly against target paths on disk, ensuring absolute syntax styling layout before any hashes are read.
 
-### 2. Base Relational Anchor Ingestion (`asha_snapshot_commit.ts`, `asha_coordinator_batch.ts`)
+### 2. Base Relational Anchor Ingestion 
 
 Once normalized, the script opens a high-performance database transaction.
 
-* **3NF Inventory Tracking:** It populates the core relational mapping tables (`public.modules` / `public.asha_modules`), creating or fetching a localized anchor ID based on path variables.
-* **Immutable Version Ledger:** A complete historical content footprint is pushed down into `public.module_snapshots`. If the incoming content hash matches the last entry recorded for that anchor, the pipeline cleanly skips redundant storage routines.
+* **3NF Inventory Tracking:** It populates the core relational mapping tables, creating or fetching a localized anchor ID based on path variables.
+* **Immutable Version Ledger:** A complete historical content footprint is pushed down into the database tables. If the incoming content hash matches the last entry recorded for that anchor, the pipeline cleanly skips redundant storage routines.
 
-### 3. Vector Atomization (`asha_coordinator_batch.ts`, `asha_ingest_trial.ts`)
+### 3. Vector Atomization 
 
 The engine splits files into arrays of lines and indexes them individually.
 
-* **Deduplicated Lines:** Every unique line of text is passed into `public.asha_lines`, keyed uniquely by its personal SHA-256 signature alongside an explicit tracking metric for indentation depth.
-* **Junction Mapping:** An operational junction entity (`public.asha_module_line_junction`) matches these line hashes to absolute indices, carrying supplemental array IDs for multi-token syntax matrices and compiler boundary classifications.
+* **Deduplicated Lines:** Every unique line of text is passed into `asha_lines`, keyed uniquely by its personal SHA-256 signature alongside an explicit tracking metric for indentation depth.
+* **Junction Mapping:** An operational junction entity matches these line hashes to absolute indices, carrying supplemental array IDs for multi-token syntax matrices and compiler boundary classifications.
 
 ### 4. Structural Block Assembly (`asha_block_builder.ts`, `asha_nomenclature_crawler.ts`)
 
-The system passes code metadata to an internal AST crawler engine (leveraging `ts-morph` parsing functionality).
+The system passes code metadata to an internal AST crawler engine.
 
 * **Block Deconstruction:** Instead of tracking code lines arbitrarily, the assembler maps blocks according to structural semantics (functions, classes, interfaces, control blocks).
-* **Content Addressing:** The engine pushes these nodes into `public.asha_unique_blocks` using a composite array signature (`line_hashes`, `block_type`, and a cryptographic `content_hash`).
-* **Sequence Alignment:** Coordinates are instantly bound within `public.asha_module_block_instances` via sequence ordering weights, mapping exactly how blocks reconstruct linearly.
+* **Content Addressing:** The engine pushes these nodes into `asha_unique_blocks` using a composite array signature (`line_hashes`, `block_type`, and a cryptographic `content_hash`).
+* **Sequence Alignment:** Coordinates are instantly bound within `asha_module_block_instances` via sequence ordering weights, mapping exactly how blocks reconstruct linearly.
 
-### 5. Workspace Drift Evaluation (`asha_drift_analyzer.ts`)
+### 5. Workspace Drift Evaluation (`asha_drift_analyzer`)
 
 When a change request or an AI-generated string template hits the environment, ASHA avoids text-comparison tools like `diff`.
 
