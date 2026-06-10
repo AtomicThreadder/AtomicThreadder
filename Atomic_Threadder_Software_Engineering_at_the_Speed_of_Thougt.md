@@ -1,4 +1,5 @@
-# ***Atomic Threadder: Engineering at the Speed of Thought, With a Safety Net***
+# *Atomic Threadder:*
+# *Engineering at the Speed of Thought, With a Safety Net*
 
 Most engineers using AI coding tools today are trapped in a quiet, exhausting loop.
 
